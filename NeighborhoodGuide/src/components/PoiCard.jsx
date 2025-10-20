@@ -10,8 +10,9 @@ export default function PoiCard({ poi, onPress, onToggleFavorite, isFavorite, un
       {!!poi.thumbnail && <Image source={{ uri: poi.thumbnail }} style={{ width: 80, height: 80, borderRadius: 8, marginRight: 12 }} />}
       <View style={{ flex: 1 }}>
         <Text style={{ fontWeight: '700', fontSize: 16 }}>{poi.name}</Text>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 4 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 4 }}>
           <RatingStars rating={poi.rating} />
+          <View style={{ width: 8 }} />
           <DistanceBadge valueKm={poi.distanceKm} unit={unit} />
         </View>
         <Text style={{ color: '#6B7280', marginTop: 6 }}>

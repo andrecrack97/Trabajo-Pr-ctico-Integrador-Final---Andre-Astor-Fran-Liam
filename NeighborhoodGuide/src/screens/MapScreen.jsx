@@ -42,7 +42,9 @@ export default function MapScreen() {
           initialRegion={initialRegion}
         >
           {pois.map((p) => (
-            <Marker key={p.id} coordinate={{ latitude: p.latitude, longitude: p.longitude }} title={p.name}>
+            <Marker key={p.id} coordinate={{ latitude: p.latitude, longitude: p.longitude }} title={p.name}
+              tracksViewChanges={false}
+            >
               <Callout>
                 <View style={{ maxWidth: 250 }}>
                   <Text style={{ fontWeight: '600' }}>{p.name}</Text>

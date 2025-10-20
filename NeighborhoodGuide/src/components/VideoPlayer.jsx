@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import { Video } from 'expo-av';
+import { Video, ResizeMode } from 'expo-av';
 
 export default function VideoPlayer({ uri, style }) {
   const videoRef = useRef(null);
@@ -26,7 +26,7 @@ export default function VideoPlayer({ uri, style }) {
         ref={videoRef}
         source={{ uri }}
         style={{ width: '100%', height: '100%', backgroundColor: '#000' }}
-        resizeMode="contain"
+        resizeMode={ResizeMode.CONTAIN}
         useNativeControls
         onLoadStart={() => setLoading(true)}
         onReadyForDisplay={() => setLoading(false)}
