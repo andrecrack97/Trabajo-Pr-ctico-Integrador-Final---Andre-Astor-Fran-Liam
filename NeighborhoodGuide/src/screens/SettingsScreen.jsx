@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { getRuntimeLocaleInfo, formatCurrency, formatDate, formatNumber } from '../services/localeService';
 
 export default function SettingsScreen() {
-  const [info, setInfo] = useState({ locale: '', region: '', timeZone: '', currency: 'USD' });
+  const [info, setInfo] = useState({ locale: '', region: '', timeZone: '', currency: 'ARS' });
 
   useEffect(() => {
     setInfo(getRuntimeLocaleInfo());
@@ -12,10 +12,10 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Ajustes</Text>
-      <Text>Locale: {info.locale}</Text>
-      <Text>Región: {info.region}</Text>
-      <Text>Timezone: {info.timeZone}</Text>
-      <Text>Moneda: {info.currency}</Text>
+      <Text>Locale: {info.locale || '(no disponible)'}</Text>
+      <Text>Región: {info.region || '(no disponible)'}</Text>
+      <Text>Timezone: {info.timeZone || '(no disponible)'}</Text>
+      <Text>Moneda: {info.currency || '(no disponible)'}</Text>
       <View style={{ height: 16 }} />
       <Text>Precio ejemplo: {formatCurrency(2500.5, info.currency)}</Text>
       <Text>Fecha actual: {formatDate(new Date(), { dateStyle: 'medium', timeStyle: 'short' })}</Text>

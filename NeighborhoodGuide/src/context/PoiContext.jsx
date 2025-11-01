@@ -65,4 +65,3 @@ export default function PoiProvider({ children }) {
   return <PoiContext.Provider value={value}>{children}</PoiContext.Provider>;
 }
 
-
