@@ -5,6 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { PoiContext } from '../context/PoiContext';
 import { formatCurrency } from '../services/localeService';
 import { getImageSource } from '../utils/imageHelper';
+import { hasLocalVideo } from '../utils/videoHelper';
+import VideoPlayer from '../components/VideoPlayer';
 
 export default function PoiDetailScreen() {
   const route = useRoute();
@@ -21,6 +23,7 @@ export default function PoiDetailScreen() {
   }
 
   const favorite = isFavorite(poi.id);
+  const hasVideo = hasLocalVideo(poi.videoUrl);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -33,6 +36,15 @@ export default function PoiDetailScreen() {
       </Text>
       <View style={{ height: 16 }} />
       <Text style={styles.description}>{poi.description}</Text>
+      <View style={{ height: 16 }} />
+      <Text style={styles.sectionTitle}>Video</Text>
+      {hasVideo ? (
+        <VideoPlayer videoUrl={poi.videoUrl} style={styles.videoPlayer} />
+      ) : (
+        <View style={styles.noVideoContainer}>
+          <Text style={styles.noVideoText}>No hay video cargado para este lugar</Text>
+        </View>
+      )}
       <View style={{ height: 16 }} />
       <TouchableOpacity
         style={[styles.favoriteButton, favorite && styles.favoriteButtonActive]}
@@ -101,6 +113,34 @@ const styles = StyleSheet.create({
   },
   favoriteButtonTextActive: {
     color: '#FFFFFF',
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 12,
+    color: '#374151',
+  },
+  videoPlayer: {
+    width: '100%',
+    height: 200,
+    borderRadius: 8,
+    overflow: 'hidden',
+    marginBottom: 16,
+    backgroundColor: '#000',
+  },
+  noVideoContainer: {
+    width: '100%',
+    height: 200,
+    borderRadius: 8,
+    backgroundColor: '#F3F4F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  noVideoText: {
+    color: '#6B7280',
+    fontSize: 14,
+    textAlign: 'center',
   },
 });
 
