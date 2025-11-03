@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react
 import { useNavigation } from '@react-navigation/native';
 import { PoiContext } from '../context/PoiContext';
 import { formatCurrency, formatNumber } from '../services/localeService';
+import { getImageSource } from '../utils/imageHelper';
 
 export default function HomeScreen() {
   const navigation = useNavigation();
@@ -16,8 +17,8 @@ export default function HomeScreen() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('PoiDetail', { id: item.id })}>
-            {!!item.thumbnail && (
-              <Image source={{ uri: item.thumbnail }} style={styles.thumb} />
+            {!!item.thumbnail && getImageSource(item.thumbnail) && (
+              <Image source={getImageSource(item.thumbnail)} style={styles.thumb} />
             )}
             <View style={{ flex: 1 }}>
               <Text style={styles.name}>{item.name}</Text>

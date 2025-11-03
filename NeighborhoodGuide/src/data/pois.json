@@ -9,7 +9,7 @@
     "openHours": "24h",
     "rating": 4.6,
     "videoUrl": "https://www.youtube.com/watch?v=WxdpQRe_5Tc", 
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/06/Barrio_Ingl%C3%A9s.jpg", 
+    "thumbnail": "local:barrio-ingles", 
     "description": "Pintoresca zona residencial conocida por su arquitectura de estilo inglés."
   },
   {
@@ -22,7 +22,7 @@
     "openHours": "24h",
     "rating": 4.5,
     "videoUrl": "https://www.youtube.com/watch?v=BxZg_cF6OOo", 
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/1/15/Plaza_Irlanda_Caba.jpg", 
+    "thumbnail": "local:plaza-irlanda", 
     "description": "Una de las plazas más grandes de la ciudad, con más de 50 especies botánicas y una frondosa arboleda."
   },
   {
@@ -35,7 +35,7 @@
     "openHours": "08:00-23:00",
     "rating": 4.7,
     "videoUrl": "https://www.youtube.com/watch?v=H1lgEdJbX5g", 
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/1/17/Club_Ferro_Carril_Oeste_logo.svg", 
+    "thumbnail": "local:ferro", 
     "description": "Importante club deportivo del barrio con instalaciones para múltiples disciplinas."
   },
   {
@@ -48,7 +48,7 @@
     "openHours": "06:00-22:00",
     "rating": 4.8,
     "videoUrl": "https://www.youtube.com/watch?v=1EY24z-RA5M", 
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Parque_Centenario_-_vista_general.jpg", 
+    "thumbnail": "local:centenario", 
     "description": "Parque emblemático que alberga el Museo Argentino de Ciencias Naturales, con lago central y extensas áreas verdes."
   },
   {
@@ -61,7 +61,7 @@
     "openHours": "06:00-22:00",
     "rating": 4.6,
     "videoUrl": "https://www.youtube.com/watch?v=SOdM-XVZkWk", 
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Parque_Rivadavia.jpg", 
+    "thumbnail": "local:parque-rivadavia", 
     "description": "Espacio verde con gran arboleda, lago artificial, monumento a Simón Bolívar y feria de libros los fines de semana."
   },
   {
@@ -74,7 +74,7 @@
     "openHours": "24h",
     "rating": 4.4,
     "videoUrl": "https://www.youtube.com/watch?v=Tb5rHrbMv9A", 
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Cid_Campeador_Caba.jpg", 
+    "thumbnail": "local:cid-campeador", 
     "description": "Plazoleta con la estatua ecuestre del Cid Campeador, obra de la escultora Anna Hyatt Huntington."
   }
   

@@ -4,6 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { PoiContext } from '../context/PoiContext';
 import { formatCurrency } from '../services/localeService';
+import { getImageSource } from '../utils/imageHelper';
 
 export default function PoiDetailScreen() {
   const route = useRoute();
@@ -23,8 +24,8 @@ export default function PoiDetailScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {!!poi.thumbnail && (
-        <Image source={{ uri: poi.thumbnail }} style={styles.thumbnail} />
+      {!!poi.thumbnail && getImageSource(poi.thumbnail) && (
+        <Image source={getImageSource(poi.thumbnail)} style={styles.thumbnail} />
       )}
       <Text style={styles.title}>{poi.name}</Text>
       <Text style={styles.meta}>
